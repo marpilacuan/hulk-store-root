@@ -46,8 +46,8 @@ public class UserService implements IUserService {
 	}
 
 	@Override
-	public UserVo singIn(String nickname) {
-		UserEntity userFound = userRepository.findUserByNickname(nickname);
+	public UserVo singIn(String nickname, String password) {
+		UserEntity userFound = userRepository.findUserByNicknamePassword(nickname, password);
 		if (userFound != null) {
 			return new UserVo(userFound.getNickname(), userFound.getPassword(), userFound.getEmail(),
 					userFound.getIsAdmin());

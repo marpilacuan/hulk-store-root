@@ -25,8 +25,9 @@ public interface IUserService {
 	 * Method to sing in.
 	 * 
 	 * @param nickname
+	 * @param password
 	 * @return userVo
 	 */
-	UserVo singIn(String nickname);
+	UserVo singIn(String nickname, String password);
 
 }

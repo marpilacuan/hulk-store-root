@@ -38,9 +38,9 @@ public class UserController {
 
 	}
 	
-	@GetMapping(value = "/singIn/{nickname}")
-	public ResponseEntity<UserVo> singIn(@PathVariable("nickname") String nickname) {
-		UserVo response = userService.singIn(nickname);
+	@GetMapping(value = "/singIn/{nickname}/{password}")
+	public ResponseEntity<UserVo> singIn(@PathVariable("nickname") String nickname, @PathVariable("password") String password) {
+		UserVo response = userService.singIn(nickname, password);
 		return ResponseEntity.ok(response);
 	}
 

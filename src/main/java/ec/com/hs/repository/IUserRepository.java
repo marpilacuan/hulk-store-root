@@ -18,4 +18,7 @@ public interface IUserRepository extends JpaRepository<UserEntity, Long>{
 
 	@Query("SELECT u FROM UserEntity u WHERE u.nickname = ?1")
 	UserEntity findUserByNickname(String nickName);
+	
+	@Query("SELECT u FROM UserEntity u WHERE u.nickname = ?1 and u.password = ?2")
+	UserEntity findUserByNicknamePassword(String nickName, String password);
 }
